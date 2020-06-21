@@ -4,7 +4,7 @@
 import random
 import sys
 import os
-path = "/opt/color-scripts/color-scripts"
+path = os.environ.get('HOME')+'/.bin'
 listdir = os.listdir(path) 
 random.shuffle(listdir)
 for i in listdir:
