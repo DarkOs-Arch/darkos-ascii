@@ -9,6 +9,9 @@ listdir = os.listdir(path)
 random.shuffle(listdir)
 for i in listdir:
     name = i 
-    
-os.system('%s/%s'%(path,i))
-os.system('stty echo')
+if i.endswith(".ans") :
+    os.system('iconv -f 437 %s/%s | pv --quiet --rate-limit 7000'%(path,i))
+    os.system('stty echo')
+else:
+    os.system('%s/%s'%(path,i))
+    os.system('stty echo')
